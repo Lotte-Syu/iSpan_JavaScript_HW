@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>question04</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+  
+</body>
+<script>
+  // 4. 寫一個函式，帶入兩個參數分別是一個陣列跟一個數字 n，回傳一個裡面所有小於 n 的數的陣列
+// 比如 findAllLess([1, 2, 3], 2) 正確回傳值：[1]
+
+function findAllLess(array, num){
+  let lessNumArra = [];
+  array.forEach((item) => {
+    if(item < num){
+      lessNumArra.push(item)
+    }
+  })
+  return lessNumArra;
+}
+console.log(findAllLess([1, 2, 3, 4, 5], 4));
+
+
+</script>
+</html>
