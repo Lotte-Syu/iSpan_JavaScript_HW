@@ -44,24 +44,24 @@
 
 
   let people = ["Tom", "John", "Lily", "Sara"]; 
-  let form = document.querySelector(".box");
-  let inputText = document.getElementById("inputText");
-  let outputText = document.getElementById("outputText");
+  const form = document.querySelector('.box');
+  const inputText = document.querySelector('#inputText');
+  const outputText = document.querySelector('#outputText');
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-
     let target = inputText.value.trim(); 
     if (target === "") {
       outputText.value = "請輸入一個名字"; 
       return;
     }
-
-    outputText.value = people.includes(target)
-      ? `${target} 存在`
-      : `${target} 不存在`;
-  });
-
+    let search = false
+    people.forEach((name)=>{
+      if(target === name){
+      search = true
+      }
+    })
+    outputText.value = search ? `${target}存在` : `${target}不存在`
+  })
 </script>
-
 </html>
