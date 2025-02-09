@@ -40,9 +40,6 @@ const submitBtn = document.querySelector('#submitBtn');
 // [2, 3, 4] -> [4, 9, 16]
 let square = (arr) => arr.map((item) => item ** 2);
 
-// let result = square([2,3,4])
-// console.log(result);
-
 submitBtn.addEventListener("click",function(event){
   event.preventDefault();
   let userInput = (inputNum.value).split("");
@@ -51,10 +48,6 @@ submitBtn.addEventListener("click",function(event){
   console.log(filterIsNum);
   outputNum.value = square(filterIsNum); 
 })
-
-
-
-
 
 </script>
 </html>
