@@ -15,6 +15,14 @@
     justify-content: center;
     align-items: center;
     display: none;
+  
+  }
+  .overlayStyle02{
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    display: none;
   }
 </style>
 
@@ -23,11 +31,11 @@
     
   <!-- 點擊按鈕 -->
   <div class="m-3">
-    <button type="button" id="openModal" class="btn btn-success btn-lg text-warning">點擊彈出視窗</button>
+    <button type="button" id="openBtn" class="btn btn-success btn-lg text-warning">點擊彈出視窗</button>
   </div>
 
   <!-- 彈出視窗 -->
-  <div class="position-fixed top-0 start-0 w-100 h-100 overlayStyle">
+  <div class="position-fixed top-0 start-0 w-100 h-100 overlayStyle" id="modal">
     <div class="card" style="width: 500px;">
       <img src="/question07_img.png" class="card-img-top" alt="coding-img">
       <div class="card-body">
@@ -39,29 +47,51 @@
           「== 是當你以為你們在交往，結果只是朋友；=== 是你確定你們真的在一起了。」😂
         </p>
         <div class="text-end">
-          <a href="#" class="btn btn-success">關閉按鈕<i class="bi bi-x-square-fill ms-2"></i></a>
+          <a href="#" class="btn btn-success" id="closeModalBtn">關閉按鈕<i class="bi bi-x-square-fill ms-2"></i></a>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="position-fixed top-0 start-0 w-100 h-100 overlayStyle02" id="modal02">
+    <div class="card" style="width:18rem;">
+      <div class="card-body">
+        <h6>資展前端班</h6>
+        <p class="card-text">
+          21號 許毓尹
+        </p>
+        <div class="text-end">
+          <a href="#" class="btn btn-success" id="closeModalBtn02">關閉按鈕<i class="bi bi-x-square-fill ms-2"></i></a>
         </div>
         </div>
     </div>
   </div>
 
 
-
 <script>
     // 取得相關元素
-  const modal = document.getElementById("modal");
-  const openModalBtn = document.getElementById("openModal");
-  const closeModalBtn = document.querySelector(".close");
+  const modal = document.querySelector('#modal');
+  const modal02 = document.querySelector('#modal02');
+  const openBtn = document.querySelector('#openBtn');
+  const closeModalBtn = document.querySelector("#closeModalBtn");
+  const closeModalBtn02 = document.querySelector('#closeModalBtn02');
+
+  console.log(modal, openBtn, closeModalBtn );
 
   // 點擊按鈕打開彈出視窗
-  openModalBtn.addEventListener("click", () => {
+  openBtn.addEventListener("click", ()=>{
       modal.style.display = "flex";
   });
 
   // 點擊叉叉關閉視窗
-  closeModalBtn.addEventListener("click", () => {
+  closeModalBtn.addEventListener("click", ()=>{
       modal.style.display = "none";
+      modal02.style.display = "flex"
   });
+
+  closeModalBtn02.addEventListener("click", ()=>{
+    modal02.style.display = "none"
+  })
 
   // 點擊遮罩區域時關閉視窗
   // modal.addEventListener("click", (event) => {
