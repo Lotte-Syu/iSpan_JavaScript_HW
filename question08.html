@@ -1,6 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question08</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <style>
+    /* * {
+      outline: 1px solid red;
+    } */
+    .wrapper {
+      width: 60%;
+      border: 2px solid gray;
+      border-radius: 20px 20px 0 0 ;
+      margin: 50px auto;
+      a {
+        color: antiquewhite;
+      }
+    }
+    .tab-content {
+      margin: 0;
+      font-size: 24px;
+      padding: 20px;
+      strong{
+        text-align: center;
+      }
+    }
+    a:hover{
+      color: brown;
+    }
+    .dropdown{
+      /* display: none; */
+      visibility: hidden;
+      overflow: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: height 0.5s ease-in-out, 0.3s ease-in-out;
+    }
+    .dropdown.show{
+    border: 2px solid gray;
+    max-height: auto; /* 足夠大的數值來確保內容展開 */
+    visibility: visible;
+    overflow: visible;
+    opacity: 1;
+    }
+  </style>
 
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -135,3 +189,50 @@
 </body>
 
 </html>
+=======
+  <body>
+    <div class="wrapper">
+      <div class="d-flex justify-content-center align-items-center py-2">
+        <h1>前端三本柱</h1>
+        <button id="openBtn" class="btn btn-info ms-3">點我了解</button>
+      </div>
+
+      <div id="dropdown" class="dropdown">
+        <ul class="py-2 bg-secondary list-unstyled hstack justify-content-center gap-5">
+          <li><a href="#" class="text-decoration-none fs-3">HTML</a></li>
+          <li><a href="#" class="text-decoration-none fs-3">CSS</a></li>
+          <li><a href="#" class="text-decoration-none fs-3">React</a></li>
+        </ul>
+        <div class="tab-content bg-info-subtle text-info-emphasis">
+          <p>HTML（超文本標記語言）<br>負責網頁結構，定義標題、段落、圖片、按鈕等元素，是網站的骨架。</p>
+          <p>CSS（階層式樣式表）<br>負責網頁外觀，透過顏色、排版、動畫等設計，讓網站變得美觀、吸引人。</p>
+          <p>JavaScript（JS）<br>負責網頁互動，讓按鈕可點擊、表單可驗證，並且能動態更新內容，提升使用者體驗。</p>
+          <h4 class="text-center fw-bold">HTML 是骨架，CSS 是設計，JavaScript 則賦予生命。<br>掌握這三大技術，就能開發出專業且吸引人的網站。</h4>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const openBtn = document.querySelector("#openBtn");
+      const dropdown = document.querySelector("#dropdown");
+
+      openBtn.addEventListener("click", () => {
+        dropdown.classList.toggle("show");
+
+        if (dropdown.classList.contains("show")) {
+        dropdown.style.height = dropdown.scrollHeight + "px"; // 設定為內容高度
+        } else {
+            dropdown.style.height = "0"; // 收回去
+        }
+      });
+
+      // 點擊外部時關閉 dropdown
+      document.addEventListener("click", function (event) {
+          if (!openBtn.contains(event.target) && !dropdown.contains(event.target)) {
+              dropdown.classList.remove("show");
+          }
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> c21fa95122ad3e0761a299f09f73db26ae03c636
